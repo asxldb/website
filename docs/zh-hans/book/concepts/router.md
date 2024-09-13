@@ -115,7 +115,7 @@ async fn show_writer(req: &mut Request) {
 
 - `<**>`: 代表通配符匹配的部分可以是空字符串, 比如路径是 `/files/<**+*rest_path>`, 会匹配 `/files`， `/files/abc.txt`，`/files/dir/abc.txt`；
 - `<*+>`: 代表通配符匹配的部分必须存在，不能匹配到空字符串, 比如路径是 `/files/<*+rest_path>`, 不会匹配 `/files` 但是会匹配 `/files/abc.txt`，`/files/dir/abc.txt`；
-- `<*?>`: 代表通配符匹配的部分可以是空字符串, 但是只能包含一个路径片段, 比如路径是 `/files/<*？rest_path>`, 不会匹配 `/files/dir/abc.txt` 但是会匹配 `/files`，`/files/abc.txt`；
+- `<*?>`: 代表通配符匹配的部分可以是空字符串, 但是只能包含一个路径片段, 比如路径是 `/files/<*?rest_path>`, 不会匹配 `/files/dir/abc.txt` 但是会匹配 `/files`，`/files/abc.txt`；
 
 允许组合使用多个表达式匹配同一个路径片段, 比如 `/articles/article_<id:num>/`, `/images/<name>.<ext>`.
 
